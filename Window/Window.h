@@ -5,6 +5,9 @@
 #include <windows.h>
 
 #include "Exception/Exception.h"
-#include "System/System.h"
-#include "Class/Class.h"
-#include "Handle/Handle.h"
+#include "Utility/ReferenceCounter/IReferenceCounter.h"
+#include "Utility/WindowPtr/WindowPtrRef.hpp"
+#include "Utility/WindowPtr/WindowPtr.hpp"
+#include "System/ISystem.h"
+#include "Class/IClass.h"
+#include "Handle/IHandle.h"

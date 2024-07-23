@@ -1,25 +1,31 @@
 ﻿#include "pch.h"
 #include "System.h"
+#include "../Class/Class.h"
+#include "../Handle/Handle.h"
 
 Window::System::System(const HINSTANCE instanceHandle)
-    : _instanceHandle(instanceHandle)
+    : _instanceHandle(instanceHandle), _referenceCount(1)
 {
 }
 
-Window::Class Window::System::Register(const LPCWSTR name) const
+void Window::System::Register(const LPCWSTR name, IClass** windowClass) const
 {
-    return Class(_instanceHandle, name);
+    *windowClass = new Class(_instanceHandle, name);
 }
 
-RECT Window::System::AdjustWindowRect(const SIZE size)
+void Window::System::Create(IClass* windowClass, const RECT windowRect, IHandle** handle) const
 {
-    RECT rect = {0, 0, size.cx, size.cy};
-    ThrowLastErrorIf<Error>()
-        (::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, FALSE) == FALSE, L"Adjust window rect fail.");
-    return rect;
+    *handle = new Handle(_instanceHandle, windowClass->GetName(), windowRect);
 }
 
-Window::Handle Window::System::Create(const Class& windowClass, const RECT windowRect) const
+void Window::System::AddReference()
 {
-    return Handle(_instanceHandle, windowClass.GetName(), windowRect);
+    _referenceCount++;
+}
+
+size_t Window::System::Release()
+{
+    if (--_referenceCount > 0) return _referenceCount;
+    delete this;
+    return 0;
 }

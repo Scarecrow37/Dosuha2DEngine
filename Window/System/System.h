@@ -1,19 +1,20 @@
 ﻿#pragma once
-#include "../Class/Class.h"
-#include "../Handle/Handle.h"
 
 namespace Window
 {
-    class System
+    class System : public ISystem
     {
     public:
         explicit System(HINSTANCE instanceHandle);
 
-        [[nodiscard]] Class Register(LPCWSTR name) const;
-        [[nodiscard]] Handle Create(const Class& windowClass, RECT windowRect) const;
-        [[nodiscard]] static RECT AdjustWindowRect(SIZE size);
+        void Register(LPCWSTR name, IClass** windowClass) const override;
+        void Create(IClass* windowClass, RECT windowRect, IHandle** handle) const override;
+
+        void AddReference() override;
+        size_t Release() override;
 
     private:
         HINSTANCE _instanceHandle;
+        size_t _referenceCount;
     };
 }

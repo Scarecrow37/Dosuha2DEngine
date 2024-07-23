@@ -1,8 +1,8 @@
 ﻿#include "pch.h"
 #include "Handle.h"
 
-
 Window::Handle::Handle(const HINSTANCE instanceHandle, const LPCWSTR className, const RECT windowRect)
+    : _referenceCount(1)
 {
     _windowHandle = CreateWindow(className, className, WS_OVERLAPPEDWINDOW,
                                  windowRect.left, windowRect.top, windowRect.right - windowRect.left,
@@ -20,14 +20,23 @@ Window::Handle::~Handle()
 
 void Window::Handle::Show(const int showCommand) const
 {
-    ThrowLastErrorIf<Error>()
-        (_windowHandle == nullptr, L"Show window fail. Window handle is null.");
     ShowWindow(_windowHandle, showCommand);
 }
 
 void Window::Handle::Update() const
 {
-    auto thrower = ThrowLastErrorIf<Error>();
-    thrower(_windowHandle == nullptr, L"Update window fail. Window handle is null.");
-    thrower(UpdateWindow(_windowHandle) == FALSE, L"Update window fail.");
+    ThrowLastErrorIf<Error>()
+        (UpdateWindow(_windowHandle) == FALSE, L"Update window fail.");
+}
+
+void Window::Handle::AddReference()
+{
+    _referenceCount++;
+}
+
+size_t Window::Handle::Release()
+{
+    if (--_referenceCount > 0) return _referenceCount;
+    delete this;
+    return 0;
 }

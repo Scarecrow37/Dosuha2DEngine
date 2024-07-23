@@ -5,12 +5,12 @@ namespace Engine
     class System
     {
     public:
-        System(HINSTANCE instanceHandle, int showCommand, LPCWSTR gameName);
+        System(HINSTANCE instanceHandle, LPCWSTR gameName);
         System(const System& other) = delete;
         System(System&& other) noexcept = delete;
         System& operator=(const System& other) = delete;
         System& operator=(System&& other) noexcept = delete;
-        virtual ~System() = default;
+        ~System() = default;
 
         void Initialize();
         void Run();
@@ -21,7 +21,7 @@ namespace Engine
         void LazyUpdate(float deltaTime);
         void Render(/*TODO Renderer*/);
 
-        
+        Window::WindowPtr<Window::IHandle> _window;
         std::wstring _name;
         bool _isRun;
     };

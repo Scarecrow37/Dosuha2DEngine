@@ -3,11 +3,11 @@
 
 Window::Class::Class(const HINSTANCE instanceHandle, const LPCWSTR name)
     : _windowClass({
-        sizeof(WNDCLASSEX), CS_HREDRAW | CS_VREDRAW, DefaultWindowProcedure,
-        NULL, NULL, instanceHandle, LoadIcon(instanceHandle, IDI_APPLICATION),
-        LoadCursor(instanceHandle, IDC_ARROW), static_cast<HBRUSH>(GetStockObject(WHITE_BRUSH)),
-        nullptr, name, LoadIcon(instanceHandle, IDI_APPLICATION)
-    })
+          sizeof(WNDCLASSEX), CS_HREDRAW | CS_VREDRAW, DefaultWindowProcedure,
+          NULL, NULL, instanceHandle, LoadIcon(instanceHandle, IDI_APPLICATION),
+          LoadCursor(instanceHandle, IDC_ARROW), static_cast<HBRUSH>(GetStockObject(WHITE_BRUSH)),
+          nullptr, name, LoadIcon(instanceHandle, IDI_APPLICATION)
+      }), _referenceCount(1)
 {
     ThrowLastErrorIf<Error>()
         (RegisterClassEx(&_windowClass) == FALSE, L"Register window class fail.");
@@ -16,6 +16,18 @@ Window::Class::Class(const HINSTANCE instanceHandle, const LPCWSTR name)
 LPCWSTR Window::Class::GetName() const
 {
     return _windowClass.lpszClassName;
+}
+
+void Window::Class::AddReference()
+{
+    _referenceCount++;
+}
+
+size_t Window::Class::Release()
+{
+    if (--_referenceCount > 0) return _referenceCount;
+    delete this;
+    return 0;
 }
 
 LRESULT Window::Class::DefaultWindowProcedure(const HWND windowHandle, const UINT message, const WPARAM wParam,
