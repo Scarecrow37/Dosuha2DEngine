@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Trigger/Trigger.h"
 
 namespace Input
 {
@@ -6,5 +7,6 @@ namespace Input
     {
     public:
     private:
+        Trigger::State _triggered;
     };
 }

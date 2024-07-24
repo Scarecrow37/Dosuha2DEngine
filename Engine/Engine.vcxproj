@@ -146,6 +146,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -176,6 +177,10 @@
     <ProjectReference Include="..\Exception\Exception.vcxproj">
       <Project>{ed3546a8-a8ae-45da-9622-d2bcb3ac2487}</Project>
       <Name>Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Time\Time.vcxproj">
+      <Project>{1884cf54-1124-4681-840d-83a472b0130d}</Project>
+      <Name>Time</Name>
     </ProjectReference>
     <ProjectReference Include="..\Window\Window.vcxproj">
       <Project>{2058c754-32d6-492d-852a-32310a2fbde7}</Project>
