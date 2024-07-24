@@ -20,18 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Class\Class.h" />
-    <ClInclude Include="Class\IClass.h" />
     <ClInclude Include="Exception\Exception.h" />
     <ClInclude Include="Exception\Error\Error.h" />
     <ClInclude Include="Handle\Handle.h" />
-    <ClInclude Include="Handle\IHandle.h" />
+    <ClInclude Include="Interfaces\IClass.h" />
+    <ClInclude Include="Interfaces\IHandle.h" />
+    <ClInclude Include="Interfaces\Interfaces.h" />
+    <ClInclude Include="Interfaces\IReferenceCounter.h" />
+    <ClInclude Include="Interfaces\ISystem.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="System\ISystem.h" />
     <ClInclude Include="System\System.h" />
-    <ClInclude Include="Utility\Functions\Functions.h" />
-    <ClInclude Include="Utility\ReferenceCounter\IReferenceCounter.h" />
-    <ClInclude Include="Utility\WindowPtr\WindowPtr.hpp" />
-    <ClInclude Include="Utility\WindowPtr\WindowPtrRef.hpp" />
+    <ClInclude Include="Utilities\Functions\Functions.h" />
+    <ClInclude Include="Utilities\Utilities.h" />
+    <ClInclude Include="Utilities\WindowPtr\WindowPtr.hpp" />
+    <ClInclude Include="Utilities\WindowPtr\WindowPtrRef.hpp" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +118,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="System\System.cpp" />
-    <ClCompile Include="Utility\Functions\Functions.cpp" />
+    <ClCompile Include="Utilities\Functions\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Exception\Exception.vcxproj">

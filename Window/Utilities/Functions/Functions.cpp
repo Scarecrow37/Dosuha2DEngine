@@ -3,7 +3,7 @@
 #include "../../System/System.h"
 
 
-void Window::CreateWindowSystem(const HINSTANCE instanceHandle, ISystem** system)
+void Window::CreateSystem(const HINSTANCE instanceHandle, ISystem** system)
 {
     *system = new System(instanceHandle);
 }
