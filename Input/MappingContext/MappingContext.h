@@ -1,11 +1,13 @@
 ﻿#pragma once
-#include "../Action.h"
 
 namespace Input
 {
-    class MappingContext
+    class MappingContext : public IMappingContext
     {
     public:
+        void Update(float deltaTime) override;
+
     private:
+        std::unordered_set<IAction*> _actions;
     };
 }

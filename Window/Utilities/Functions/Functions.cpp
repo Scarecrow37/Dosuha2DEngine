@@ -11,7 +11,7 @@ void Window::CreateSystem(const HINSTANCE instanceHandle, ISystem** system)
 RECT Window::AdjustWindowRect(const SIZE size)
 {
     RECT rect = {0, 0, size.cx, size.cy};
-    ThrowLastErrorIf<Error>()
+    ThrowLastErrorIf<Exception::Error>()
         (::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, FALSE) == FALSE, L"Adjust window rect fail.");
     return rect;
 }

@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-namespace Window::Exception
+namespace Input::Exception
 {
     class Error : public ::Exception::UnicodeException
     {
@@ -8,7 +8,7 @@ namespace Window::Exception
         Error() = default;
         Error(DWORD errorCode, std::wstring message);
         Error(DWORD errorCode, const wchar_t* message);
-        
+
         [[nodiscard]] DWORD GetErrorCode() const noexcept;
 
     private:

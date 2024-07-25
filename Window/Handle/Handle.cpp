@@ -8,7 +8,7 @@ Window::Handle::Handle(const HINSTANCE instanceHandle, const LPCWSTR className, 
                                  windowRect.left, windowRect.top, windowRect.right - windowRect.left,
                                  windowRect.bottom - windowRect.top, nullptr, nullptr,
                                  instanceHandle, nullptr);
-    ThrowLastErrorIf<Error>()
+    ThrowLastErrorIf<Exception::Error>()
         (_windowHandle == nullptr, L"Create window fail.");
 }
 
@@ -25,7 +25,7 @@ void Window::Handle::Show(const int showCommand) const
 
 void Window::Handle::Update() const
 {
-    ThrowLastErrorIf<Error>()
+    ThrowLastErrorIf<Exception::Error>()
         (UpdateWindow(_windowHandle) == FALSE, L"Update window fail.");
 }
 

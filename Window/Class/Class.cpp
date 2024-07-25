@@ -9,7 +9,7 @@ Window::Class::Class(const HINSTANCE instanceHandle, const LPCWSTR name)
           nullptr, name, LoadIcon(instanceHandle, IDI_APPLICATION)
       }), _referenceCount(1)
 {
-    ThrowLastErrorIf<Error>()
+    ThrowLastErrorIf<Exception::Error>()
         (RegisterClassEx(&_windowClass) == FALSE, L"Register window class fail.");
 }
 

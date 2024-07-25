@@ -15,6 +15,6 @@ namespace Engine::Manager
         Time();
 
     private:
-        ::Time::ISystem* _system;
+        std::unique_ptr<::Time::ISystem> _system;
     };
 }
