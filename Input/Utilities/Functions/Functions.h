@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-namespace Time
+namespace Input
 {
     ISystem* CreateSystem();
 }

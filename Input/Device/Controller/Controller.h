@@ -22,6 +22,8 @@ namespace Input::Device
         Component::IComponent* GetComponent(Thumb thumb) override;
 
     private:
+        static unsigned short GetFlag(Button button);
+        
         bool CheckConnection();
 
         DWORD _controllerIndex;

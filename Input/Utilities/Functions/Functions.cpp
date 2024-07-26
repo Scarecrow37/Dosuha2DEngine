@@ -1,8 +1,8 @@
-﻿#include "pch.h"
+#include "pch.h"
 #include "Functions.h"
 #include "../../System/System.h"
 
-Time::ISystem* Time::CreateSystem()
+Input::ISystem* Input::CreateSystem()
 {
     return new System();
 }

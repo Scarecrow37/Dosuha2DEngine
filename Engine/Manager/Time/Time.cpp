@@ -3,9 +3,7 @@
 
 void Engine::Manager::Time::Initialize() noexcept
 {
-    ::Time::ISystem* system;
-    CreateSystem(&system);
-    GetInstance()->_system = std::unique_ptr<::Time::ISystem>(system);
+    GetInstance()->_system = std::unique_ptr<::Time::ISystem>(::Time::CreateSystem());
 }
 
 void Engine::Manager::Time::Update() noexcept

@@ -162,6 +162,10 @@
       <Project>{2500ebc8-6247-451a-afc8-76513debd7df}</Project>
       <Name>Input</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Time\Time.vcxproj">
+      <Project>{1884cf54-1124-4681-840d-83a472b0130d}</Project>
+      <Name>Time</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

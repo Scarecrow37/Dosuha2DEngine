@@ -2,6 +2,6 @@
 
 namespace Window
 {
-    inline void CreateSystem(HINSTANCE instanceHandle, ISystem** system);
-    inline RECT AdjustWindowRect(SIZE size);
+    void CreateSystem(HINSTANCE instanceHandle, ISystem** system);
+    RECT AdjustWindowRect(SIZE size);
 }

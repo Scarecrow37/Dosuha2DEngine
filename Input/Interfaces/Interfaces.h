@@ -7,6 +7,6 @@
 #include "IMouse.h"
 #include "IController.h"
 #include "ITrigger.h"
-#include "IAction.h"
+#include "Action.h"
 #include "IMappingContext.h"
 #include "ISystem.h"

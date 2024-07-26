@@ -22,7 +22,7 @@ void Input::Device::Controller::Update()
         _controllerIndex = Disconnection;
         return;
     }
-    
+
     _triggers[Trigger::Left].SetValue(state.Gamepad.bLeftTrigger);
     _triggers[Trigger::Right].SetValue(state.Gamepad.bRightTrigger);
 
@@ -44,19 +44,26 @@ void Input::Device::Controller::Reset()
     std::ranges::for_each(_thumbs, [](auto& thumb) { thumb.second.Reset(); });
 }
 
-Input::Component::IComponent* Input::Device::Controller::GetComponent(Button button)
+Input::Component::IComponent* Input::Device::Controller::GetComponent(const Button button)
 {
     return &_buttons[button];
 }
 
-Input::Component::IComponent* Input::Device::Controller::GetComponent(Trigger trigger)
+Input::Component::IComponent* Input::Device::Controller::GetComponent(const Trigger trigger)
 {
     return &_triggers[trigger];
 }
 
-Input::Component::IComponent* Input::Device::Controller::GetComponent(Thumb thumb)
+Input::Component::IComponent* Input::Device::Controller::GetComponent(const Thumb thumb)
 {
     return &_thumbs[thumb];
+}
+
+unsigned short Input::Device::Controller::GetFlag(Button button)
+{
+    int flag = 1;
+    for (int i = 0; i < static_cast<int>(button); ++i) flag = flag << 1;
+    return static_cast<unsigned short>(flag);
 }
 
 bool Input::Device::Controller::CheckConnection()
