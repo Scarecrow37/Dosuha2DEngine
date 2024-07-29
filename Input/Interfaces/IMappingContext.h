@@ -14,6 +14,7 @@ namespace Input
         virtual ~IMappingContext() = default;
 
         virtual void Update(float deltaTime) = 0;
+        virtual void Reset() = 0;
 
         virtual Action* CreateAction(const std::wstring_view& name) = 0;
         virtual Action* GetAction(const std::wstring_view& name) = 0;

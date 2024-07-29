@@ -172,26 +172,45 @@
     <ClInclude Include="Device\Mouse\Mouse.h" />
     <ClInclude Include="Exception\Error\Error.h" />
     <ClInclude Include="Exception\Exception.h" />
-    <ClInclude Include="Interfaces\Action.h" />
+    <ClInclude Include="Interfaces\Action\Action.hpp" />
     <ClInclude Include="Interfaces\IComponent.h" />
     <ClInclude Include="Interfaces\IComponentContainer.h" />
-    <ClInclude Include="Interfaces\IController.h" />
-    <ClInclude Include="Interfaces\IDevice.h" />
-    <ClInclude Include="Interfaces\IKeyboard.h" />
+    <ClInclude Include="Interfaces\IDevices\IController\IController.h" />
+    <ClInclude Include="Interfaces\IDevices\IDevices.h" />
+    <ClInclude Include="Interfaces\IDevices\IDevice\IDevice.h" />
+    <ClInclude Include="Interfaces\IDevices\IKeyboard\IKeyboard.h" />
+    <ClInclude Include="Interfaces\IDevices\IMouse\IMouse.h" />
     <ClInclude Include="Interfaces\IMappingContext.h" />
-    <ClInclude Include="Interfaces\IMouse.h" />
+    <ClInclude Include="Interfaces\IModifier\IModifier.h" />
     <ClInclude Include="Interfaces\Interfaces.h" />
     <ClInclude Include="Interfaces\ISystem.h" />
-    <ClInclude Include="Interfaces\ITrigger.h" />
+    <ClInclude Include="Interfaces\ITriggers\IChordAction\IChordAction.h" />
+    <ClInclude Include="Interfaces\ITriggers\IDown\IDown.h" />
+    <ClInclude Include="Interfaces\ITriggers\IHoldAndRelease\IHoldAndRelease.h" />
+    <ClInclude Include="Interfaces\ITriggers\IHold\IHold.h" />
+    <ClInclude Include="Interfaces\ITriggers\IPluse\IPulse.h" />
+    <ClInclude Include="Interfaces\ITriggers\IPressed\IPressed.h" />
+    <ClInclude Include="Interfaces\ITriggers\IReleased\IReleased.h" />
+    <ClInclude Include="Interfaces\ITriggers\ITap\ITap.h" />
+    <ClInclude Include="Interfaces\ITriggers\ITriggers.h" />
+    <ClInclude Include="Interfaces\ITriggers\ITrigger\ITrigger.h" />
     <ClInclude Include="MappingContext\MappingContext.h" />
-    <ClInclude Include="Modifier\IModifier.h" />
+    <ClInclude Include="Modifier\Modifier.h" />
+    <ClInclude Include="Modifier\Negative\Negative.h" />
+    <ClInclude Include="Modifier\SwizzleAxis\SwizzleAxis.h" />
     <ClInclude Include="System\System.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Trigger\Base\Base.h" />
+    <ClInclude Include="Trigger\ChordAction\ChordAction.h" />
     <ClInclude Include="Trigger\Down\Down.h" />
+    <ClInclude Include="Trigger\HoldAndRelease\HoldAndRelease.h" />
+    <ClInclude Include="Trigger\Hold\Hold.h" />
+    <ClInclude Include="Trigger\Pressed\Pressed.h" />
+    <ClInclude Include="Trigger\Pulse\Pulse.h" />
+    <ClInclude Include="Trigger\Released\Released.h" />
     <ClInclude Include="Trigger\State\State.h" />
-    <ClInclude Include="Trigger\Trigger.h" />
+    <ClInclude Include="Trigger\Tap\Tap.h" />
+    <ClInclude Include="Trigger\Trigger\Trigger.hpp" />
     <ClInclude Include="Utilities\Functions\Functions.h" />
     <ClInclude Include="Utilities\Utilities.h" />
   </ItemGroup>
@@ -203,7 +222,7 @@
     <ClCompile Include="Device\Keyboard\Keyboard.cpp" />
     <ClCompile Include="Device\Mouse\Mouse.cpp" />
     <ClCompile Include="Exception\Error\Error.cpp" />
-    <ClCompile Include="Interfaces\Action.cpp">
+    <ClCompile Include="Interfaces\Action\Action.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -278,6 +297,8 @@
       <LibCompiled>true</LibCompiled>
     </ClCompile>
     <ClCompile Include="MappingContext\MappingContext.cpp" />
+    <ClCompile Include="Modifier\Negative\Negative.cpp" />
+    <ClCompile Include="Modifier\SwizzleAxis\SwizzleAxis.cpp" />
     <ClCompile Include="System\System.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -356,9 +377,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Trigger\Base\Base.cpp" />
+    <ClCompile Include="Trigger\ChordAction\ChordAction.cpp" />
     <ClCompile Include="Trigger\Down\Down.cpp" />
+    <ClCompile Include="Trigger\HoldAndRelease\HoldAndRelease.cpp" />
+    <ClCompile Include="Trigger\Hold\Hold.cpp" />
+    <ClCompile Include="Trigger\Pressed\Pressed.cpp" />
+    <ClCompile Include="Trigger\Pulse\Pulse.cpp" />
+    <ClCompile Include="Trigger\Released\Released.cpp" />
     <ClCompile Include="Trigger\State\State.cpp" />
+    <ClCompile Include="Trigger\Tap\Tap.cpp" />
+    <ClCompile Include="Trigger\Trigger\Trigger.cpp" />
     <ClCompile Include="Utilities\Functions\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>

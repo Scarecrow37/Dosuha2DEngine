@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-namespace Input
+namespace Input::Modifier
 {
     struct IModifier
     {
@@ -11,6 +11,8 @@ namespace Input
         IModifier& operator=(IModifier&& other) noexcept = default;
         virtual ~IModifier() = default;
 
-        virtual Value operator()(const Value& value) const = 0;
+        virtual Value& operator()(Value& value) const = 0;
+
+        int a;
     };
 }

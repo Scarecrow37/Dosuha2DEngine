@@ -8,6 +8,7 @@ namespace Input
     {
     public:
         void Update(float deltaTime) override;
+        void Reset() override;
 
         Action* CreateAction(const std::wstring_view& name) override;
         Action* GetAction(const std::wstring_view& name) override;

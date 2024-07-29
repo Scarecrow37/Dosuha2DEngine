@@ -5,7 +5,7 @@ namespace Input::Trigger
     class State
     {
     public:
-        void AddListener(const Listener& listener);
+        void AddListener(Listener&& listener);
         void Execute(const Value& value);
 
     private:

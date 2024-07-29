@@ -19,6 +19,6 @@ void Input::Component::Button::Reset()
 Input::Value Input::Component::Button::GetValue() const
 {
     Value value{};
-    value.on = _value;
+    value.scalar = _value ? 1.0f : 0.0f;
     return value;
 }

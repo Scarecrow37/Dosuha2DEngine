@@ -1,9 +1,9 @@
 ﻿#include "pch.h"
 #include "State.h"
 
-void Input::Trigger::State::AddListener(const Listener& listener)
+void Input::Trigger::State::AddListener(Listener&& listener)
 {
-    _listeners.push_back(std::move(listener));
+    _listeners.push_back(std::forward<Listener>(listener));
 }
 
 void Input::Trigger::State::Execute(const Value& value)

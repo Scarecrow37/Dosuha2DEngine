@@ -15,10 +15,32 @@ namespace Input
             float scalar;
         };
 
-        // Vector vector;
-
-        operator bool() const;
+        struct
+        {
+            float x;
+            float y;
+        };
 
         Value& operator+=(const Value& rhs);
+        bool operator==(const Value& rhs) const;
+
+        static Value Zero();
     };
+
+    inline Value& Value::operator+=(const Value& rhs)
+    {
+        x += rhs.x;
+        y += rhs.y;
+        return *this;
+    }
+
+    inline bool Value::operator==(const Value& rhs) const
+    {
+        return x == rhs.x && y == rhs.y;
+    }
+
+    inline Value Value::Zero()
+    {
+        return Value{};
+    }
 }

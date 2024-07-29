@@ -11,6 +11,11 @@ void Input::System::SetMappingContext(IMappingContext* mappingContext)
     _mappingContext = mappingContext;
 }
 
+Input::IMappingContext* Input::System::CreateMappingContext()
+{
+    return new MappingContext();
+}
+
 void Input::System::Update(const float deltaTime)
 {
     _keyboard.Update();
@@ -24,12 +29,8 @@ void Input::System::Reset()
     _keyboard.Reset();
     _mouse.Reset();
     _controller.Reset();
+    if (_mappingContext) _mappingContext->Reset();
 }
-
-// void Input::System::CreateMappingContext(IMappingContext** mappingContext)
-// {
-//     *mappingContext = new MappingContext();
-// }
 
 Input::Device::IKeyboard* Input::System::GetKeyboard()
 {

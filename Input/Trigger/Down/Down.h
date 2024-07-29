@@ -1,10 +1,15 @@
-﻿#pragma once
+#pragma once
 
 namespace Input::Trigger
 {
-    // class Down : public ITrigger
-    // {
-    // public:
-    //     void Update(float deltaTime) override;
-    // };
+    class Down : public Trigger, public IDown
+    {
+    public:
+        Down() = default;
+
+        void Update(float deltaTime) override;
+
+    private:
+        bool _isDown;
+    };
 }

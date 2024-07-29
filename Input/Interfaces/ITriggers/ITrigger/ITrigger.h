@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "../Trigger/State/State.h"
 
 namespace Input::Trigger
 {
@@ -12,5 +13,6 @@ namespace Input::Trigger
         virtual ~ITrigger() = default;
 
         virtual void Update(float deltaTime) = 0;
+        virtual void BindOnTriggered(const std::function<void(TriggerState, const Value&)>& onTriggered) = 0;
     };
 }

@@ -15,4 +15,5 @@
 #include "Declare/Declare.h"
 #include "Interfaces/Interfaces.h"
 #include "Utilities/Utilities.h"
+#include "Modifier/Modifier.h"
 
