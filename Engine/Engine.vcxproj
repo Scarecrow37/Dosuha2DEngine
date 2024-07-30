@@ -156,7 +156,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Manager\Input\Input.cpp" />
+    <ClCompile Include="Manager\Render\Render.cpp" />
     <ClCompile Include="Manager\Time\Time.cpp" />
     <ClCompile Include="Manager\Window\Window.cpp" />
     <ClCompile Include="pch.cpp">
@@ -166,8 +167,11 @@
     <ClCompile Include="System\System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="Manager\Base\Base.hpp" />
+    <ClInclude Include="Manager\Input\Input.h" />
     <ClInclude Include="Manager\Manager.h" />
+    <ClInclude Include="Manager\Render\Render.h" />
     <ClInclude Include="Manager\Time\Time.h" />
     <ClInclude Include="Manager\Window\Window.h" />
     <ClInclude Include="pch.h" />
@@ -177,6 +181,14 @@
     <ProjectReference Include="..\Exception\Exception.vcxproj">
       <Project>{ed3546a8-a8ae-45da-9622-d2bcb3ac2487}</Project>
       <Name>Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Input\Input.vcxproj">
+      <Project>{2500ebc8-6247-451a-afc8-76513debd7df}</Project>
+      <Name>Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Render\Render.vcxproj">
+      <Project>{8799087d-7e9b-47ab-8365-762e005ba421}</Project>
+      <Name>Render</Name>
     </ProjectReference>
     <ProjectReference Include="..\Time\Time.vcxproj">
       <Project>{1884cf54-1124-4681-840d-83a472b0130d}</Project>

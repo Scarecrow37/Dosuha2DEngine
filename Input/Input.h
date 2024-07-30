@@ -5,15 +5,17 @@
 #include <windows.h>
 #include <Xinput.h>
 
+#include <memory>
 #include <array>
 #include <vector>
 #include <unordered_map>
-#include <unordered_set>
 #include <algorithm>
+#include <numeric>
 #include <functional>
 
 #include "Declare/Declare.h"
 #include "Interfaces/Interfaces.h"
 #include "Utilities/Utilities.h"
 #include "Modifier/Modifier.h"
+#include "Triggers/Triggers.h"
 

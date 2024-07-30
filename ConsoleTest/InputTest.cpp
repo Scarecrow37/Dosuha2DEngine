@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <memory>
 #include "../Input/Input.h"
@@ -80,4 +81,5 @@ int main(int argc, char* argv[])
         InputSystem->Reset();
     }
 }
+*/
 

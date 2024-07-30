@@ -15,16 +15,16 @@ namespace Engine
         void Finalize();
 
     protected:
-        System() = default;
+        System(const std::wstring& gameName, SIZE clientSize);
         ~System() = default;
-
+        
         std::wstring _gameName;
         SIZE _clientSize;
 
     private:
         void Update(float deltaTime);
         void LazyUpdate(float deltaTime);
-        void Render(/*TODO Renderer*/);
+        void Render(Manager::Render::Renderer renderer);
 
         bool _isRun;
     };

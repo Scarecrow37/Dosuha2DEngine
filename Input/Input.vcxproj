@@ -173,17 +173,17 @@
     <ClInclude Include="Exception\Error\Error.h" />
     <ClInclude Include="Exception\Exception.h" />
     <ClInclude Include="Interfaces\Action\Action.hpp" />
-    <ClInclude Include="Interfaces\IComponent.h" />
-    <ClInclude Include="Interfaces\IComponentContainer.h" />
+    <ClInclude Include="Interfaces\IComponent\IComponent.h" />
+    <ClInclude Include="Interfaces\IComponent\IComponentContainer.h" />
     <ClInclude Include="Interfaces\IDevices\IController\IController.h" />
     <ClInclude Include="Interfaces\IDevices\IDevices.h" />
     <ClInclude Include="Interfaces\IDevices\IDevice\IDevice.h" />
     <ClInclude Include="Interfaces\IDevices\IKeyboard\IKeyboard.h" />
     <ClInclude Include="Interfaces\IDevices\IMouse\IMouse.h" />
-    <ClInclude Include="Interfaces\IMappingContext.h" />
+    <ClInclude Include="Interfaces\IMappingContext\IMappingContext.h" />
     <ClInclude Include="Interfaces\IModifier\IModifier.h" />
     <ClInclude Include="Interfaces\Interfaces.h" />
-    <ClInclude Include="Interfaces\ISystem.h" />
+    <ClInclude Include="Interfaces\ISystem\ISystem.h" />
     <ClInclude Include="Interfaces\ITriggers\IChordAction\IChordAction.h" />
     <ClInclude Include="Interfaces\ITriggers\IDown\IDown.h" />
     <ClInclude Include="Interfaces\ITriggers\IHoldAndRelease\IHoldAndRelease.h" />
@@ -201,16 +201,17 @@
     <ClInclude Include="System\System.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Trigger\ChordAction\ChordAction.h" />
-    <ClInclude Include="Trigger\Down\Down.h" />
-    <ClInclude Include="Trigger\HoldAndRelease\HoldAndRelease.h" />
-    <ClInclude Include="Trigger\Hold\Hold.h" />
-    <ClInclude Include="Trigger\Pressed\Pressed.h" />
-    <ClInclude Include="Trigger\Pulse\Pulse.h" />
-    <ClInclude Include="Trigger\Released\Released.h" />
-    <ClInclude Include="Trigger\State\State.h" />
-    <ClInclude Include="Trigger\Tap\Tap.h" />
-    <ClInclude Include="Trigger\Trigger\Trigger.hpp" />
+    <ClInclude Include="Triggers\ChordAction\ChordAction.h" />
+    <ClInclude Include="Triggers\Down\Down.h" />
+    <ClInclude Include="Triggers\HoldAndRelease\HoldAndRelease.h" />
+    <ClInclude Include="Triggers\Hold\Hold.h" />
+    <ClInclude Include="Triggers\Pressed\Pressed.h" />
+    <ClInclude Include="Triggers\Pulse\Pulse.h" />
+    <ClInclude Include="Triggers\Released\Released.h" />
+    <ClInclude Include="Triggers\State\State.h" />
+    <ClInclude Include="Triggers\Tap\Tap.h" />
+    <ClInclude Include="Triggers\Triggers.h" />
+    <ClInclude Include="Triggers\Trigger\Trigger.hpp" />
     <ClInclude Include="Utilities\Functions\Functions.h" />
     <ClInclude Include="Utilities\Utilities.h" />
   </ItemGroup>
@@ -377,16 +378,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Trigger\ChordAction\ChordAction.cpp" />
-    <ClCompile Include="Trigger\Down\Down.cpp" />
-    <ClCompile Include="Trigger\HoldAndRelease\HoldAndRelease.cpp" />
-    <ClCompile Include="Trigger\Hold\Hold.cpp" />
-    <ClCompile Include="Trigger\Pressed\Pressed.cpp" />
-    <ClCompile Include="Trigger\Pulse\Pulse.cpp" />
-    <ClCompile Include="Trigger\Released\Released.cpp" />
-    <ClCompile Include="Trigger\State\State.cpp" />
-    <ClCompile Include="Trigger\Tap\Tap.cpp" />
-    <ClCompile Include="Trigger\Trigger\Trigger.cpp" />
+    <ClCompile Include="Triggers\ChordAction\ChordAction.cpp" />
+    <ClCompile Include="Triggers\Down\Down.cpp" />
+    <ClCompile Include="Triggers\HoldAndRelease\HoldAndRelease.cpp" />
+    <ClCompile Include="Triggers\Hold\Hold.cpp" />
+    <ClCompile Include="Triggers\Pressed\Pressed.cpp" />
+    <ClCompile Include="Triggers\Pulse\Pulse.cpp" />
+    <ClCompile Include="Triggers\Released\Released.cpp" />
+    <ClCompile Include="Triggers\State\State.cpp" />
+    <ClCompile Include="Triggers\Tap\Tap.cpp" />
+    <ClCompile Include="Triggers\Trigger\Trigger.cpp" />
     <ClCompile Include="Utilities\Functions\Functions.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -40,3 +40,8 @@ size_t Window::Handle::Release()
     delete this;
     return 0;
 }
+
+HWND Window::Handle::Get()
+{
+    return _windowHandle;
+}

@@ -10,6 +10,11 @@ void Engine::Manager::Window::Initialize(const HINSTANCE instanceHandle, const L
     GetInstance()->_handle->Update();
 }
 
+HWND Engine::Manager::Window::GetWindowHandle()
+{
+    return GetInstance()->_handle->Get();
+}
+
 Engine::Manager::Window::Window()
     : _system(nullptr), _handle(nullptr), _class(nullptr)
 {

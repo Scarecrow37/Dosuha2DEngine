@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../../Trigger/ChordAction/ChordAction.h"
+#include "../../Triggers/ChordAction/ChordAction.h"
 #include "../../Action/Action_.h"
 
 namespace Input

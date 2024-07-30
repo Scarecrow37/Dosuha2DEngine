@@ -1,11 +1,6 @@
 #pragma once
-#include "../../Trigger/Down/Down.h"
-#include "../../Trigger/Hold/Hold.h"
-#include "../../Trigger/HoldAndRelease/HoldAndRelease.h"
-#include "../../Trigger/Pressed/Pressed.h"
-#include "../../Trigger/Pulse/Pulse.h"
-#include "../../Trigger/Released/Released.h"
-#include "../../Trigger/Tap/Tap.h"
+#include "Triggers/State/State.h"
+#include "Triggers/Triggers.h"
 
 namespace Input
 {

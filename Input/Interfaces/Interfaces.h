@@ -1,10 +1,10 @@
 #pragma once
 
-#include "IComponent.h"
-#include "IComponentContainer.h"
+#include "IComponent/IComponent.h"
+#include "IComponent/IComponentContainer.h"
 #include "IDevices/IDevices.h"
 #include "IModifier/IModifier.h"
 #include "ITriggers/ITriggers.h"
 #include "Action/Action.hpp"
-#include "IMappingContext.h"
-#include "ISystem.h"
+#include "IMappingContext/IMappingContext.h"
+#include "ISystem/ISystem.h"

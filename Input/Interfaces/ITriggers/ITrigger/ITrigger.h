@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "../Trigger/State/State.h"
 
 namespace Input::Trigger
 {

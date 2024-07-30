@@ -11,6 +11,8 @@ namespace Engine::Manager
     public:
         static void Initialize(HINSTANCE instanceHandle, LPCWSTR gameName, SIZE size, int showCommand);
 
+        static HWND GetWindowHandle();
+
     protected:
         Window();
 
