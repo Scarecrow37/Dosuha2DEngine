@@ -1,13 +1,16 @@
 ﻿#include "pch.h"
 #include "System.h"
 
+#include "../World/World.h"
+
 
 void Engine::System::Initialize(const HINSTANCE instanceHandle, const int showCommand)
 {
-    Manager::Window::Initialize(instanceHandle, _gameName.c_str(), _clientSize, showCommand);
     Manager::Time::Initialize();
+    Manager::Window::Initialize(instanceHandle, _gameName.c_str(), _clientSize, showCommand);
     Manager::Input::Initialize();
     Manager::Render::Initialize(Manager::Window::GetWindowHandle(), D2D1::SizeU(_clientSize.cx, _clientSize.cy));
+    _world->Initialize();
     _isRun = true;
 }
 
@@ -42,23 +45,27 @@ void Engine::System::Run()
 
 void Engine::System::Finalize()
 {
+    _world->Finalize();
     Manager::Render::Finalize();
     _isRun = false;
 }
 
 Engine::System::System(const std::wstring& gameName, const SIZE clientSize)
-    : _gameName(gameName), _clientSize(clientSize), _isRun(false)
+    : _gameName(gameName), _clientSize(clientSize), _isRun(false), _world(std::make_unique<World>())
 {
 }
 
-void Engine::System::Update(float deltaTime)
+void Engine::System::Update(const float deltaTime) const
 {
+    _world->Update(deltaTime);
 }
 
-void Engine::System::LazyUpdate(float deltaTime)
+void Engine::System::LazyUpdate(const float deltaTime) const
 {
+    _world->LazyUpdate(deltaTime);
 }
 
-void Engine::System::Render(Manager::Render::Renderer renderer)
+void Engine::System::Render(const Manager::Render::Renderer& renderer) const
 {
+    _world->Render(renderer);
 }

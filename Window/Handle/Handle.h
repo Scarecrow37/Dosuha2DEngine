@@ -17,7 +17,7 @@ namespace Window
         
         void AddReference() override;
         size_t Release() override;
-        HWND Get() override;
+        [[nodiscard]] HWND Get() const override;
 
     private:
         HWND _windowHandle;

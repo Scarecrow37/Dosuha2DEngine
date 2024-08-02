@@ -41,7 +41,7 @@ size_t Window::Handle::Release()
     return 0;
 }
 
-HWND Window::Handle::Get()
+HWND Window::Handle::Get() const
 {
     return _windowHandle;
 }

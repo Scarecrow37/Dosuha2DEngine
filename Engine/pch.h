@@ -9,6 +9,7 @@
 #include <memory>
 #include <mutex>
 #include <string>
+#include <list>
 
 #include "Manager/Manager.h"
 
